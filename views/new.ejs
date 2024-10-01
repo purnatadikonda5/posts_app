@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .createform{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2 px red solid;
+            border-radius: 20px;
+            flex-direction: column;
+            
+        }
+        .createform-text{
+            text-align: center;
+            height:50px;
+            border: 2 px red solid;
+            border-radius: 20px;
+        }
+        button{
+            padding:10px;
+            font-size: 25px;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">...ENTER YOUR DETAILS...</h2>
+    <form method="post" action="/posts"  class="createform">
+        <input class="createform-text" placeholder="Enter your username " type="text" name="username"><br />
+        <textarea class="createform-text" placeholder="Give your content" name="content"></textarea>
+        <br /> <br />
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

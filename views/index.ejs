@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+    <h1>These are all the posts ! </h1>
+    <br/><br/>
+    <a href="http://localhost:8080/posts/new">Create post</a>
+    <br/><br/><br/>
+
+    <div method="post" action="localhost:8080/posts" class="posts">
+    <% for(post of posts){ %>
+        <div class="posts-post">
+            <h3 class="user">@<%= post.username %></h3>
+            <br />
+            <h4>CONTENT: <%= post.content%></h4>
+        </div>
+    <% } %>
+</div>
+</body>
+</html>
