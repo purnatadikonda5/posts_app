@@ -9,16 +9,23 @@
 <body>
     <h1>These are all the posts ! </h1>
     <br/><br/>
-    <a href="http://localhost:8080/posts/new">Create post</a>
-    
-    <br/><br/><br/>
+    <a id="createpost" href="http://localhost:8080/posts/new">Create post</a>
 
-    <div method="post" action="localhost:8080/posts" class="posts">
+    <br/><br/><br/><br/><br/><br/>
+
+    <div  class="posts">
     <% for(post of posts){ %>
         <div class="posts-post">
             <h3 class="user">@<%= post.username %></h3>
             <br />
             <h4>CONTENT: <%= post.content%></h4>
+           
+            <a class="depost" href="http://localhost:8080/posts/<%=post.id%>">Detailed post</a>
+
+            <a class="depost" href="http://localhost:8080/posts/<%=post.id%>/edit">Edit post</a>
+            <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
+                <button id="deletepost" class="depost">Delete post</button>
+            </form>
         </div>
     <% } %>
 </div>
